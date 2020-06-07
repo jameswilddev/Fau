@@ -1,0 +1,26 @@
+name: Continuous Integration
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, windows-2019, macos-10.15]
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.3'
+    - run: dotnet test csharp
+    - run: dotnet pack csharp/Fau --configuration Release
+  release:
+    if: github.ref == 'refs/heads/production' && github.repository == 'jameswilddev/fau'
+    needs: build
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.3'
+    - run: dotnet pack csharp/Fau --configuration Release
+    - run: dotnet nuget push csharp/Fau/bin/Release/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.nuget_key }}
