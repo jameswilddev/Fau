@@ -20,6 +20,7 @@
     "csharp/Fau/obj": true,
     "csharp/Fau.Tests/bin": true,
     "csharp/Fau.Tests/obj": true,
-    "csharp/Fau.Tests/TestResults": true
+    "csharp/Fau.Tests/TestResults": true,
+    "vendor": true,
   }
 }

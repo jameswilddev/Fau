@@ -13,6 +13,13 @@ jobs:
         dotnet-version: '3.1.300'
     - run: dotnet test csharp
     - run: dotnet pack csharp/Fau --configuration Release
+    uses: shivammathur/setup-php@v2
+    - with:
+      php-version: '7.4'
+    - run: composer install
+    - run: mkdir php/test_results
+    - run: vendor/bin/phpunit --whitelist php/src --coverage-text php/tests/ | tee php/test_results/unit
+    - run: grep -E "^\s*Lines:\s*100.00%\s*\([0-9]+\/[0-9]+\)$$" php/test_results/unit
   release:
     if: github.ref == 'refs/heads/production' && github.repository == 'jameswilddev/fau'
     needs: build
