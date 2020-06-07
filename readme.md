@@ -10,7 +10,7 @@ You can find the specification for this format [here](fau-file-format.md).
 
 | Language                    | Status      |
 | --------------------------- | ----------- |
-| C#                          | In Progress |
+| [C#](csharp)                | In Progress |
 | PHP                         | Not Started |
 | TypeScript                  | Not Started |
 | Python                      | Not Started |

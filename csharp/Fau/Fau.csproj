@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <Title>Fau</Title>
+    <PackageId>Fau</PackageId>
+    <VersionPrefix>0.0.0</VersionPrefix>
+    <VersionSuffix>alpha</VersionSuffix>
+    <PackageTags>Fau;Flat;Array;Binary;Interchange</PackageTags>
+    <Description>Tools for reading and writing C# arrays to and from Fau byte streams.</Description>
+    <Authors>jameswilddev</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/jameswilddev/Fau</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryBranch>production</RepositoryBranch>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/jameswilddev/Fau</PackageProjectUrl>
+  </PropertyGroup>
+
+</Project>

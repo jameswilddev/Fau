@@ -15,6 +15,11 @@
   "files.eol": "\n",
   "files.exclude": {
     "**/.git": true,
-    "**/.DS_Store": true
+    "**/.DS_Store": true,
+    "csharp/Fau/bin": true,
+    "csharp/Fau/obj": true,
+    "csharp/Fau.Tests/bin": true,
+    "csharp/Fau.Tests/obj": true,
+    "csharp/Fau.Tests/TestResults": true
   }
 }
