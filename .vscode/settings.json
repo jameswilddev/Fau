@@ -22,6 +22,7 @@
     "csharp/Fau.Tests/obj": true,
     "csharp/Fau.Tests/TestResults": true,
     "vendor": true,
+    "php/test_results": true,
     "typescript/node_modules": true,
     "typescript/*.js": true,
     "typescript/*.d.ts": true,
