@@ -29,6 +29,10 @@ jobs:
     - run: mkdir php/test_results
     - run: vendor/bin/phpunit --whitelist php/src --coverage-text php/tests/ | tr '\r' '\n' | tee php/test_results/unit
     - run: grep -E "^\s*Lines:\s*100.00%\s*\([0-9]+\/[0-9]+\)\s*$" php/test_results/unit
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+        registry-url: 'https://registry.npmjs.org'
     - run: npm ci --prefix typescript
     - run: npm run-script lint --prefix typescript
     - run: npm run-script buildTypeScript --prefix typescript
@@ -44,6 +48,10 @@ jobs:
         dotnet-version: '3.1.300'
     - run: dotnet pack csharp/Fau --configuration Release
     - run: dotnet nuget push csharp/Fau/bin/Release/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.nuget_key }}
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+        registry-url: 'https://registry.npmjs.org'
     - run: npm ci --prefix typescript
     - run: npm run-script buildTypeScript --prefix typescript
     - run: npm publish
