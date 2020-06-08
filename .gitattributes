@@ -1,1 +1,6 @@
 * text=auto eol=lf
+/.github          export-ignore
+/.vscode          export-ignore
+/csharp           export-ignore
+/php/tests        export-ignore
+/php/test_results export-ignore

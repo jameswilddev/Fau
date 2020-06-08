@@ -6,6 +6,9 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-18.04, windows-2019, macos-10.15]
+    defaults:
+      run:
+        shell: bash
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-dotnet@v1
@@ -13,6 +16,18 @@ jobs:
         dotnet-version: '3.1.300'
     - run: dotnet test csharp
     - run: dotnet pack csharp/Fau --configuration Release
+    - uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'
+        coverage: xdebug
+    - run: composer install
+    - run: mkdir php/test_results
+    - run: vendor/bin/phpunit --whitelist php/src --coverage-text php/tests/ | tr '\r' '\n' | tee php/test_results/unit
+    - run: grep -E "^\s*Lines:\s*100.00%\s*\([0-9]+\/[0-9]+\)\s*$" php/test_results/unit
+    - run: npm ci --prefix typescript
+    - run: npm run-script lint --prefix typescript
+    - run: npm run-script buildTypeScript --prefix typescript
+    - run: npm run-script buildNyc --prefix typescript
   release:
     if: github.ref == 'refs/heads/production' && github.repository == 'jameswilddev/fau'
     needs: build
@@ -24,3 +39,9 @@ jobs:
         dotnet-version: '3.1.300'
     - run: dotnet pack csharp/Fau --configuration Release
     - run: dotnet nuget push csharp/Fau/bin/Release/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{ secrets.nuget_key }}
+    - run: npm ci --prefix typescript
+    - run: npm run-script buildTypeScript --prefix typescript
+    - run: npm publish
+      working-directory: typescript
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.npm_token}}

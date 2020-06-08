@@ -11,7 +11,7 @@ You can find the specification for this format [here](fau-file-format.md).
 | Language                    | Status      |
 | --------------------------- | ----------- |
 | [C#](csharp)                | In Progress |
-| PHP                         | Not Started |
+| [PHP](php)                  | In Progress |
 | TypeScript                  | Not Started |
 | Python                      | Not Started |
 | C89 (single-header library) | Not Started |

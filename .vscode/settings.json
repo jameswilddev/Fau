@@ -20,6 +20,14 @@
     "csharp/Fau/obj": true,
     "csharp/Fau.Tests/bin": true,
     "csharp/Fau.Tests/obj": true,
-    "csharp/Fau.Tests/TestResults": true
+    "csharp/Fau.Tests/TestResults": true,
+    "vendor": true,
+    "php/test_results": true,
+    "typescript/node_modules": true,
+    "typescript/*.js": true,
+    "typescript/*.d.ts": true,
+    "typescript/**/*.js": true,
+    "typescript/**/*.d.ts": true,
+    "typescript/.nyc_output": true
   }
 }
