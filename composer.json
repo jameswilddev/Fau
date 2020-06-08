@@ -1,5 +1,5 @@
 {
-  "name": "fau",
+  "name": "jameswilddev/fau",
   "description": "Tools for reading and writing PHP arrays to and from Fau byte streams.",
   "type": "library",
   "readme": "php/readme.md",
