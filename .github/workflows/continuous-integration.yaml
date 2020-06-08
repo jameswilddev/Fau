@@ -19,7 +19,9 @@ jobs:
         coverage: xdebug
     - run: composer install
     - run: mkdir php/test_results
-    - run: vendor/bin/phpunit --whitelist php/src --coverage-text php/tests/ | fromdos | tee php/test_results/unit
+    - run: vendor/bin/phpunit --whitelist php/src --coverage-text php/tests/ | tee php/test_results/unit
+    - run: fromdos php/test_results/unit
+      if: matrix.os == 'windows-2019'
     - run: grep -E "^\s*Lines:\s*100.00%\s*\([0-9]+\/[0-9]+\)\s*$" php/test_results/unit
     - run: npm ci --prefix typescript
     - run: npm run-script lint --prefix typescript
