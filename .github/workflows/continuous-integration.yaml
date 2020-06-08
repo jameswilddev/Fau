@@ -16,6 +16,7 @@ jobs:
     - uses: shivammathur/setup-php@v2
       with:
         php-version: '7.4'
+        coverage: xdebug
     - run: composer install
     - run: mkdir php/test_results
     - run: vendor/bin/phpunit --whitelist php/src --coverage-text php/tests/ | tee php/test_results/unit
