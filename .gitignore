@@ -4,3 +4,9 @@ csharp/Fau.Tests/bin
 csharp/Fau.Tests/obj
 csharp/Fau.Tests/TestResults
 vendor
+typescript/node_modules
+typescript/.nyc_output
+typescript/*.js
+typescript/*.d.ts
+typescript/**/*.js
+typescript/**/*.d.ts

@@ -22,5 +22,11 @@
     "csharp/Fau.Tests/obj": true,
     "csharp/Fau.Tests/TestResults": true,
     "vendor": true,
+    "typescript/node_modules": true,
+    "typescript/*.js": true,
+    "typescript/*.d.ts": true,
+    "typescript/**/*.js": true,
+    "typescript/**/*.d.ts": true,
+    "typescript/.nyc_output": true
   }
 }
