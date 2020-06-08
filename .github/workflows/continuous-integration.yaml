@@ -29,7 +29,7 @@ jobs:
     - run: npm run-script buildTypeScript --prefix typescript
     - run: npm run-script buildNyc --prefix typescript
   release:
-    if: github.ref == 'refs/heads/production' && github.repository == 'jameswilddev/fau'
+    if: github.event_name == 'release' && github.event.action == 'created'
     needs: build
     runs-on: ubuntu-18.04
     steps:
