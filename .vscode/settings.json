@@ -32,6 +32,9 @@
     "python/*/__pycache__": true,
     "python/.coverage": true,
     "python/.pytest_cache": true,
-    "python/*/*.pyc": true
+    "python/*/*.pyc": true,
+    "python/build": true,
+    "python/dist": true,
+    "python/fau.egg-info": true
   }
 }
