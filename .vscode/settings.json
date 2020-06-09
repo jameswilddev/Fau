@@ -28,6 +28,10 @@
     "typescript/*.d.ts": true,
     "typescript/**/*.js": true,
     "typescript/**/*.d.ts": true,
-    "typescript/.nyc_output": true
+    "typescript/.nyc_output": true,
+    "python/*/__pycache__": true,
+    "python/.coverage": true,
+    "python/.pytest_cache": true,
+    "python/*/*.pyc": true
   }
 }
