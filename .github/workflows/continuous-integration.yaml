@@ -48,7 +48,7 @@ jobs:
       working-directory: python
     - run: pytest --cov fau
       working-directory: python
-    - run: python3 setup.py sdist bdist_wheel
+    - run: python setup.py sdist bdist_wheel
       working-directory: python
   release:
     if: github.event_name == 'release'
@@ -78,7 +78,7 @@ jobs:
       working-directory: python
     - run: pip install setuptools wheel twine
       working-directory: python
-    - run: python3 setup.py sdist bdist_wheel
+    - run: python setup.py sdist bdist_wheel
       working-directory: python
-    - run: python3 -m twine upload dist/*
+    - run: python -m twine upload dist/*
       working-directory: python
