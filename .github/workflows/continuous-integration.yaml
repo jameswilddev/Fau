@@ -37,6 +37,17 @@ jobs:
     - run: npm run-script lint --prefix typescript
     - run: npm run-script buildTypeScript --prefix typescript
     - run: npm run-script buildNyc --prefix typescript
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - run: python -m pip install --upgrade pip
+      working-directory: python
+    - run: pip install flake8 pytest pytest-cov
+      working-directory: python
+    - run: flake8 . --count --show-source --statistics
+      working-directory: python
+    - run: pytest --cov fau
+      working-directory: python
   release:
     if: github.event_name == 'release'
     needs: build

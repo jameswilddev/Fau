@@ -11,3 +11,7 @@ typescript/*.js
 typescript/*.d.ts
 typescript/**/*.js
 typescript/**/*.d.ts
+python/*/__pycache__
+python/.coverage
+python/.pytest_cache
+python/*/*.pyc
