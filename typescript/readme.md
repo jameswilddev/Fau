@@ -1,6 +1,6 @@
 # Fau (TypeScript)
 
-Tools for reading and writing PHP arrays to and from Fau byte streams.
+Tools for reading and writing typed arrays to and from Fau byte streams.
 
 This package includes an `ArraySet` type which represents both a schema and a single instance of that schema; just:
 
