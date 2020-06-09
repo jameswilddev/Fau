@@ -82,3 +82,6 @@ jobs:
       working-directory: python
     - run: python -m twine upload dist/*
       working-directory: python
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{secrets.twine_password}}
