@@ -13,5 +13,5 @@ You can find the specification for this format [here](fau-file-format.md).
 | [C#](csharp)                | In Progress |
 | [PHP](php)                  | In Progress |
 | [TypeScript](typescript)    | Not Started |
-| Python                      | Not Started |
+| [Python](python)            | Not Started |
 | C89 (single-header library) | Not Started |
