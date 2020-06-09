@@ -2,4 +2,4 @@ from fau import ArraySet
 
 
 def test_export():
-    assert (ArraySet()) != None
+    assert (ArraySet()) is not None
