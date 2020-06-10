@@ -35,6 +35,7 @@
     "python/*/*.pyc": true,
     "python/build": true,
     "python/dist": true,
-    "python/fau.egg-info": true
+    "python/fau.egg-info": true,
+    "python/.mypy_cache": true
   }
 }
