@@ -81,6 +81,444 @@ namespace Fau.Tests
     }
 
     [TestMethod]
+    public void S8ReturnsAnArrayOfZeroes()
+    {
+      var arraySet = new ArraySet();
+
+      var array = arraySet.S8(2238122160, 7);
+
+      CollectionAssert.AreEqual(new SByte[] { 0, 0, 0, 0, 0, 0, 0 }, array);
+    }
+
+    [TestMethod]
+    public void S8ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU8()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U8(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S8(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S8ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS8()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S8(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S8(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S8ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU16()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U16(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S8(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S8ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS16()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S16(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S8(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S8ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S8(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S8ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S8(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S8ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByF32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.F32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S8(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void U16ReturnsAnArrayOfZeroes()
+    {
+      var arraySet = new ArraySet();
+
+      var array = arraySet.U16(2238122160, 7);
+
+      CollectionAssert.AreEqual(new UInt16[] { 0, 0, 0, 0, 0, 0, 0 }, array);
+    }
+
+    [TestMethod]
+    public void U16ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU8()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U8(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.U16(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void U16ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS8()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S8(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.U16(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void U16ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU16()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U16(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.U16(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void U16ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS16()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S16(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.U16(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void U16ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.U16(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void U16ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.U16(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void U16ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByF32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.F32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.U16(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S16ReturnsAnArrayOfZeroes()
+    {
+      var arraySet = new ArraySet();
+
+      var array = arraySet.S16(2238122160, 7);
+
+      CollectionAssert.AreEqual(new Int16[] { 0, 0, 0, 0, 0, 0, 0 }, array);
+    }
+
+    [TestMethod]
+    public void S16ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU8()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U8(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S16(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S16ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS8()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S8(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S16(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S16ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU16()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U16(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S16(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S16ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS16()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S16(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S16(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S16ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S16(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S16ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S16(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S16ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByF32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.F32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S16(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void U32ReturnsAnArrayOfZeroes()
+    {
+      var arraySet = new ArraySet();
+
+      var array = arraySet.U32(2238122160, 7);
+
+      CollectionAssert.AreEqual(new UInt32[] { 0, 0, 0, 0, 0, 0, 0 }, array);
+    }
+
+    [TestMethod]
+    public void U32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU8()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U8(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.U32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void U32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS8()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S8(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.U32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void U32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU16()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U16(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.U32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void U32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS16()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S16(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.U32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void U32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.U32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void U32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.U32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void U32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByF32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.F32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.U32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S32ReturnsAnArrayOfZeroes()
+    {
+      var arraySet = new ArraySet();
+
+      var array = arraySet.S32(2238122160, 7);
+
+      CollectionAssert.AreEqual(new Int32[] { 0, 0, 0, 0, 0, 0, 0 }, array);
+    }
+
+    [TestMethod]
+    public void S32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU8()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U8(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS8()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S8(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU16()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U16(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS16()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S16(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void S32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByF32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.F32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.S32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void F32ReturnsAnArrayOfZeroes()
+    {
+      var arraySet = new ArraySet();
+
+      var array = arraySet.F32(2238122160, 7);
+
+      CollectionAssert.AreEqual(new Single[] { 0, 0, 0, 0, 0, 0, 0 }, array);
+    }
+
+    [TestMethod]
+    public void F32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU8()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U8(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.F32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void F32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS8()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S8(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.F32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void F32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU16()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U16(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.F32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void F32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS16()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S16(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.F32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void F32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByU32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.U32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.F32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void F32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByS32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.S32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.F32(2238122160, 3));
+    }
+
+    [TestMethod]
+    public void F32ThrowsInvalidOperationExceptionWhenIdentifierAlreadyInUseByF32()
+    {
+      var arraySet = new ArraySet();
+      arraySet.F32(2238122160, 7);
+
+      Assert.ThrowsException<InvalidOperationException>(() => arraySet.F32(2238122160, 3));
+    }
+
+    [TestMethod]
     public void WriteReturnsEmptyWhenNoArraysExist()
     {
       var arraySet = new ArraySet();
