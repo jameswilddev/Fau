@@ -659,11 +659,11 @@ namespace Fau.Tests
     }
 
     [TestMethod]
-    public void WriteReturnsU16WhenValuesFitWithinU8()
+    public void WriteReturnsU16WhenValuesFitWithinU8AtLowerBound()
     {
       var arraySet = new ArraySet();
       var u16 = arraySet.U16(2238122160, 7);
-      u16[2] = 0xCD;
+      u16[2] = 0x80;
       u16[4] = 0x22;
 
       var bytes = arraySet.Write().ToArray();
@@ -673,17 +673,36 @@ namespace Fau.Tests
         0xB0, 0x08, 0x67, 0x85,
         0x00,
         0x05, 0x00, 0x00, 0x00,
-        0x00, 0x00, 0xCD, 0x00, 0x22,
+        0x00, 0x00, 0x80, 0x00, 0x22,
       }, bytes);
     }
 
     [TestMethod]
-    public void WriteReturnsU16WhenValuesFitWithinS16()
+    public void WriteReturnsU16WhenValuesFitWithinU8AtUpperBound()
     {
       var arraySet = new ArraySet();
       var u16 = arraySet.U16(2238122160, 7);
-      u16[2] = 0x7FFF;
-      u16[4] = 0x6DE5;
+      u16[2] = 0xFF;
+      u16[4] = 0x22;
+
+      var bytes = arraySet.Write().ToArray();
+
+      CollectionAssert.AreEqual(new Byte[]
+      {
+        0xB0, 0x08, 0x67, 0x85,
+        0x00,
+        0x05, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0xFF, 0x00, 0x22,
+      }, bytes);
+    }
+
+    [TestMethod]
+    public void WriteReturnsU16WhenValuesExceedU8()
+    {
+      var arraySet = new ArraySet();
+      var u16 = arraySet.U16(2238122160, 7);
+      u16[2] = 0x100;
+      u16[4] = 0x22;
 
       var bytes = arraySet.Write().ToArray();
 
@@ -692,7 +711,7 @@ namespace Fau.Tests
         0xB0, 0x08, 0x67, 0x85,
         0x02,
         0x05, 0x00, 0x00, 0x00,
-        0x00, 0x00, 0x00, 0x00, 0xFF, 0x7F, 0x00, 0x00, 0xE5, 0x6D,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x22, 0x00,
       }, bytes);
     }
 
@@ -716,7 +735,7 @@ namespace Fau.Tests
     }
 
     [TestMethod]
-    public void WriteReturnsU16WhenValuesFitWithinS16AndLastByteZero()
+    public void WriteReturnsU16WhenValuesFitWithinU16AndLastByteZero()
     {
       var arraySet = new ArraySet();
       var u16 = arraySet.U16(2238122160, 7);
@@ -877,11 +896,11 @@ namespace Fau.Tests
     }
 
     [TestMethod]
-    public void WriteReturnsU32WhenValuesFitWithinU8()
+    public void WriteReturnsU32WhenValuesFitWithinU8AtLowerBound()
     {
       var arraySet = new ArraySet();
       var u32 = arraySet.U32(2238122160, 7);
-      u32[2] = 0xCD;
+      u32[2] = 0x80;
       u32[4] = 0x22;
 
       var bytes = arraySet.Write().ToArray();
@@ -891,17 +910,36 @@ namespace Fau.Tests
         0xB0, 0x08, 0x67, 0x85,
         0x00,
         0x05, 0x00, 0x00, 0x00,
-        0x00, 0x00, 0xCD, 0x00, 0x22,
+        0x00, 0x00, 0x80, 0x00, 0x22,
       }, bytes);
     }
 
     [TestMethod]
-    public void WriteReturnsU32WhenValuesFitWithinS16()
+    public void WriteReturnsU32WhenValuesFitWithinU8AtUpperBound()
     {
       var arraySet = new ArraySet();
       var u32 = arraySet.U32(2238122160, 7);
-      u32[2] = 0x7FFF;
-      u32[4] = 0x6DE5;
+      u32[2] = 0xFF;
+      u32[4] = 0x22;
+
+      var bytes = arraySet.Write().ToArray();
+
+      CollectionAssert.AreEqual(new Byte[]
+      {
+        0xB0, 0x08, 0x67, 0x85,
+        0x00,
+        0x05, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0xFF, 0x00, 0x22,
+      }, bytes);
+    }
+
+    [TestMethod]
+    public void WriteReturnsU32WhenValuesFitWithinU16AtLowerBound()
+    {
+      var arraySet = new ArraySet();
+      var u32 = arraySet.U32(2238122160, 7);
+      u32[2] = 0x100;
+      u32[4] = 0x22;
 
       var bytes = arraySet.Write().ToArray();
 
@@ -910,12 +948,12 @@ namespace Fau.Tests
         0xB0, 0x08, 0x67, 0x85,
         0x02,
         0x05, 0x00, 0x00, 0x00,
-        0x00, 0x00, 0x00, 0x00, 0xFF, 0x7F, 0x00, 0x00, 0xE5, 0x6D,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x22, 0x00,
       }, bytes);
     }
 
     [TestMethod]
-    public void WriteReturnsU32WhenValuesFitWithinU16()
+    public void WriteReturnsU32WhenValuesFitWithinU16AtUpperBound()
     {
       var arraySet = new ArraySet();
       var u32 = arraySet.U32(2238122160, 7);
@@ -934,12 +972,12 @@ namespace Fau.Tests
     }
 
     [TestMethod]
-    public void WriteReturnsU32WhenValuesFitWithinS32()
+    public void WriteReturnsU32WhenValuesExceedU16()
     {
       var arraySet = new ArraySet();
       var u32 = arraySet.U32(2238122160, 7);
-      u32[2] = 0x7FFFFFFF;
-      u32[4] = 0x6DE5392A;
+      u32[2] = 0x10000;
+      u32[4] = 0x22;
 
       var bytes = arraySet.Write().ToArray();
 
@@ -948,12 +986,12 @@ namespace Fau.Tests
         0xB0, 0x08, 0x67, 0x85,
         0x04,
         0x05, 0x00, 0x00, 0x00,
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0x7F, 0x00, 0x00, 0x00, 0x00, 0x2A, 0x39, 0xE5, 0x6D,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x22, 0x00, 0x00, 0x00,
       }, bytes);
     }
 
     [TestMethod]
-    public void WriteReturnsU32WhenValuesFitWithinU32()
+    public void WriteReturnsU32WhenValuesFillUntilEnd()
     {
       var arraySet = new ArraySet();
       var u32 = arraySet.U32(2238122160, 7);
