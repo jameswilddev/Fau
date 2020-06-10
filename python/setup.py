@@ -4,8 +4,8 @@ with open("readme.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="fau",  # Replace with your own username
-    version="0.0.8",
+    name="fau",
+    version="0.0.9",
     author="jameswilddev",
     author_email="jameswilddev@outlook.com",
     description="Tools for reading and writing PHP arrays to and from Fau byte"
