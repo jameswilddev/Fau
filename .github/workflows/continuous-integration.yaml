@@ -42,9 +42,11 @@ jobs:
         python-version: 3.7
     - run: python -m pip install --upgrade pip
       working-directory: python
-    - run: pip install flake8 pytest pytest-cov setuptools wheel
+    - run: pip install flake8 mypy pytest pytest-cov setuptools wheel
       working-directory: python
     - run: flake8 . --count --show-source --statistics
+      working-directory: python
+    - run: mypy -p fau
       working-directory: python
     - run: pytest --cov fau
       working-directory: python
