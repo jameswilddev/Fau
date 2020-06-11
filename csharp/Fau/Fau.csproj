@@ -7,7 +7,7 @@
 
     <Title>Fau</Title>
     <PackageId>Fau</PackageId>
-    <VersionPrefix>FAU_VERSION_STRING</VersionPrefix>
+    <VersionPrefix>999.999.999</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
     <PackageTags>Fau;Flat;Array;Binary;Interchange</PackageTags>
     <Description>Tools for reading and writing C# arrays to and from Fau byte streams.</Description>

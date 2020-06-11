@@ -1,7 +1,7 @@
 {
   "name": "fau",
   "description": "Tools for reading and writing typed arrays to and from Fau byte streams.",
-  "version": "FAU_VERSION_STRING",
+  "version": "999.999.999",
   "engines": {
     "node": ">=12.13.0"
   },
