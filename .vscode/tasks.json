@@ -1,0 +1,74 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "C#",
+      "type": "shell",
+      "command": "dotnet test",
+      "options": {
+        "cwd": "csharp"
+      },
+      "windows": {
+        "options": {
+          "shell": {
+            "executable": "C:\\Windows\\System32\\cmd.exe",
+            "args": [
+              "/d",
+              "/c"
+            ]
+          }
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "PHP",
+      "type": "shell",
+      "command": "composer install && vendor/bin/phpunit --whitelist php/src --coverage-text php/tests/",
+      "windows": {
+        "options": {
+          "shell": {
+            "executable": "C:\\Windows\\System32\\cmd.exe",
+            "args": [
+              "/d",
+              "/c"
+            ]
+          }
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "TypeScript",
+      "type": "shell",
+      "command": "npm install && npm run-script buildClean && npm run-script lint && npm run-script buildTypeScript && npm run-script buildNyc",
+      "options": {
+        "cwd": "typescript"
+      },
+      "windows": {
+        "options": {
+          "shell": {
+            "executable": "C:\\Windows\\System32\\cmd.exe",
+            "args": [
+              "/d",
+              "/c"
+            ]
+          }
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+  ]
+}
