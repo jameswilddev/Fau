@@ -5,7 +5,7 @@ with open("readme.md", "r") as fh:
 
 setuptools.setup(
     name="fau",
-    version="0.0.9",
+    version="FAU_VERSION_STRING",
     author="jameswilddev",
     author_email="jameswilddev@outlook.com",
     description="Tools for reading and writing PHP arrays to and from Fau byte"
