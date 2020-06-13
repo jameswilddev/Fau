@@ -78,7 +78,7 @@ namespace Fau
     /// <returns>A sequence of <see cref="Byte" />s describing a Fau file containing <see langword="this" /> <see cref="ArraySet" />'s contained arrays.</returns>
     public IEnumerable<Byte> Write()
     {
-      return IdentifierOrder.SelectMany(identifier => Arrays[identifier].Write(identifier));
+      return IdentifierOrder.SelectMany(identifier => Arrays[identifier].Write(identifier)).Concat(new Byte[] { 0xFF });
     }
   }
 }

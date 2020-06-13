@@ -14,12 +14,12 @@
 
 ## Format
 
-The following is repeated until the end of the file:
+The following is repeated:
 
 | Primitive Type   | Quantity | Description                                                           |
 | ---------------- | -------- | --------------------------------------------------------------------- |
+| u8               | 1        | Primitive type, or 0xFF to end the file                               |
 | u32              | 1        | Identifier; usually in lower case ASCII, e.g. `test` is `74 65 73 74` |
-| u8               | 1        | Primitive type                                                        |
 | u32              | 1        | Length                                                                |
 | (Primitive Type) | (Length) | Values                                                                |
 
@@ -97,7 +97,7 @@ The following conversions are to be performed automatically should the types in 
 
 A file is to be rejected should:
 
-- It end while an array is being described.
+- It end before primitive 0xFF is encountered.
 - Two arrays share an identifier.
 - An array use an unrecognized primitive type.
 - A value fail to convert.

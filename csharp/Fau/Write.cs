@@ -67,8 +67,8 @@ namespace Fau
         return Enumerable.Empty<Byte>();
       }
 
-      return U32(identifier)
-        .Concat(U8((Byte)primitive))
+      return U8((Byte)primitive)
+        .Concat(U32(identifier))
         .Concat(U32((UInt32)(trimmedLength / elementSize)))
         .Concat(untrimmedBytes.Take(trimmedLength));
     }
