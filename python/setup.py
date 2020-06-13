@@ -8,8 +8,7 @@ setuptools.setup(
     version="999.999.999",
     author="jameswilddev",
     author_email="jameswilddev@outlook.com",
-    description="Tools for reading and writing PHP arrays to and from Fau byte"
-    + " streams.",
+    description="Tools for reading and writing to and from Fau byte streams.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/jameswilddev/fau",
