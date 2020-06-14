@@ -56,7 +56,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
-    - run: sed -i s/999.999.999/0.0.10/ csharp/Fau/Fau.csproj typescript/package.json typescript/package-lock.json python/setup.py
+    - run: sed -i s/999.999.999/0.0.11/ csharp/Fau/Fau.csproj typescript/package.json typescript/package-lock.json python/setup.py
     - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.1.300'
