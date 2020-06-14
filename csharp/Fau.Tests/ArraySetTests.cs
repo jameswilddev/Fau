@@ -1245,6 +1245,46 @@ namespace Fau.Tests
     }
 
     [TestMethod]
+    public void WriteReturnsS32WhenValuesExceedU16Negatively()
+    {
+      var arraySet = new ArraySet();
+      var s32 = arraySet.S32(2238122160, 7);
+      s32[2] = 0xFFFF;
+      s32[4] = -0x0001;
+
+      var bytes = arraySet.Write().ToArray();
+
+      CollectionAssert.AreEqual(new Byte[]
+      {
+        0x05,
+        0xB0, 0x08, 0x67, 0x85,
+        0x05, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF,
+        0xFF,
+      }, bytes);
+    }
+
+    [TestMethod]
+    public void WriteReturnsS32WhenValuesExceedU16Positively()
+    {
+      var arraySet = new ArraySet();
+      var s32 = arraySet.S32(2238122160, 7);
+      s32[2] = 0x10000;
+      s32[4] = 0x6DE5;
+
+      var bytes = arraySet.Write().ToArray();
+
+      CollectionAssert.AreEqual(new Byte[]
+      {
+        0x05,
+        0xB0, 0x08, 0x67, 0x85,
+        0x05, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0xE5, 0x6D, 0x00, 0x00,
+        0xFF,
+      }, bytes);
+    }
+
+    [TestMethod]
     public void WriteReturnsS32WhenValuesFitWithinS16()
     {
       var arraySet = new ArraySet();
