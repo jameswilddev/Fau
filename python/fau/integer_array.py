@@ -1,7 +1,19 @@
-from .fixed_length_array import FixedLengthArray
+from array import array
+from abc import abstractmethod
 
 
-class IntegerArray(FixedLengthArray):
+class IntegerArray:
+    @property
+    @abstractmethod
+    def _type_code(self) -> str:
+        """ pass would count toward coverage statistics """
+
+    def __init__(self, length: int) -> None:
+        if length < 0:
+            raise OverflowError
+        else:
+            self._values = array(self._type_code, [0] * length)
+
     def __getitem__(self, index: int) -> int:
         if index < 0:
             raise IndexError
@@ -17,3 +29,6 @@ class IntegerArray(FixedLengthArray):
             raise IndexError
         else:
             self._values[index] = value
+
+    def __len__(self) -> int:
+        return len(self._values)
