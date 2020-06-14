@@ -73,7 +73,7 @@
     {
       "label": "Python",
       "type": "shell",
-      "command": "source ./venv/bin/activate && python3 -m flake8 . --exclude venv --count --show-source --statistics && python3 -m mypy -p fau && python3 -m pytest --cov fau && python3 setup.py sdist bdist_wheel",
+      "command": "source ./venv/bin/activate && python3 -m flake8 . --exclude venv --count --show-source --statistics && python3 -m mypy -p fau && python3 -m pytest --cov-fail-under 100 --cov fau && python3 setup.py sdist bdist_wheel",
       "options": {
         "cwd": "python"
       },

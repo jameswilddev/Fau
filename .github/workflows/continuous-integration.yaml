@@ -46,7 +46,7 @@ jobs:
       working-directory: python
     - run: python -m mypy -p fau
       working-directory: python
-    - run: python -m pytest --cov fau
+    - run: python -m pytest --cov-fail-under 100 --cov fau
       working-directory: python
     - run: python setup.py sdist bdist_wheel
       working-directory: python
