@@ -1,8 +1,9 @@
 from array import array
 from abc import abstractmethod
+from .fixed_length_array import FixedLengthArray
 
 
-class IntegerArray:
+class IntegerArray(FixedLengthArray):
     @property
     @abstractmethod
     def _type_code(self) -> str:

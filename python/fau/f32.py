@@ -1,7 +1,8 @@
 from array import array
+from .fixed_length_array import FixedLengthArray
 
 
-class F32:
+class F32(FixedLengthArray):
     def __init__(self, length: int) -> None:
         if length < 0:
             raise OverflowError
