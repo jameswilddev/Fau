@@ -13,6 +13,10 @@ abstract class FixedLengthArray implements ArrayAccess, Countable {
   protected $values;
 
   protected abstract function validateValue($value): void;
+  protected abstract function performWrite(
+    int $identifier,
+    int $trimmedLength
+  );
 
   public function __construct(
     int $length
@@ -78,5 +82,25 @@ abstract class FixedLengthArray implements ArrayAccess, Countable {
 
   public final function count(): int {
     return count($this->values);
+  }
+
+  public final function write(
+    int $identifier
+  ) {
+    $trimmedLength = count($this->values);
+
+    while (true) {
+      if ($this->values[$trimmedLength - 1] !== 0) {
+        break;
+      }
+
+      $trimmedLength--;
+
+      if ($trimmedLength === 0) {
+        return [];
+      }
+    }
+
+    return $this->performWrite($identifier, $trimmedLength);
   }
 }

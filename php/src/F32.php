@@ -12,4 +12,11 @@ final class F32 extends FixedLengthArray {
       throw new TypeError();
     }
   }
+
+  protected final function performWrite(
+    int $identifier,
+    int $trimmedLength
+  ) {
+    return Write::array($identifier, 0x06, $trimmedLength, $this->values, [Write::class, 'f32']);
+  }
 }
