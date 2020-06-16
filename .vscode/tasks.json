@@ -94,5 +94,29 @@
       },
       "problemMatcher": []
     },
+    {
+      "label": "Java",
+      "type": "shell",
+      "command": "mvn clean verify",
+      "options": {
+        "cwd": "java"
+      },
+      "windows": {
+        "options": {
+          "shell": {
+            "executable": "C:\\Windows\\System32\\cmd.exe",
+            "args": [
+              "/d",
+              "/c"
+            ]
+          }
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
   ]
 }

@@ -36,6 +36,7 @@
     "python/build": true,
     "python/dist": true,
     "python/fau.egg-info": true,
-    "python/.mypy_cache": true
+    "python/.mypy_cache": true,
+    "java/target": true
   }
 }

@@ -19,3 +19,4 @@ python/build
 python/dist
 python/fau.egg-info
 python/.mypy_cache
+java/target
