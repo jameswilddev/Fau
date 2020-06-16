@@ -19,7 +19,7 @@ packaging==20.4
 pip==20.1.1
 pkginfo==1.5.0.1
 pluggy==0.13.1
-py==1.8.1
+py==1.8.2
 pycodestyle==2.6.0
 pycparser==2.20
 pyflakes==2.2.0
@@ -31,7 +31,7 @@ readme-renderer==26.0
 requests==2.23.0
 requests-toolbelt==0.9.1
 SecretStorage==3.1.2
-setuptools==47.1.1
+setuptools==47.3.0
 six==1.15.0
 tqdm==4.46.1
 twine==3.1.1
