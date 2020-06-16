@@ -1,5 +1,7 @@
 from array import array
+from typing import Iterator
 from .fixed_length_array import FixedLengthArray
+from .write import write_u8, write_u32, write_f32
 
 
 class F32(FixedLengthArray):
@@ -29,3 +31,28 @@ class F32(FixedLengthArray):
 
     def __len__(self) -> int:
         return len(self._values)
+
+    def _write(self, identifier: int) -> Iterator[int]:
+        trimmed_length = len(self._values)
+
+        while True:
+            if self._values[trimmed_length - 1] != 0:
+                break
+
+            trimmed_length = trimmed_length - 1
+
+            if trimmed_length == 0:
+                return
+
+        for byte in write_u8(0x06):
+            yield byte
+
+        for byte in write_u32(identifier):
+            yield byte
+
+        for byte in write_u32(trimmed_length):
+            yield byte
+
+        for value in self._values[:trimmed_length]:
+            for byte in write_f32(value):
+                yield byte

@@ -1,4 +1,5 @@
 from collections import OrderedDict
+from typing import Iterator
 from .fixed_length_array import FixedLengthArray
 from .u8 import U8
 from .s8 import S8
@@ -7,6 +8,7 @@ from .s16 import S16
 from .u32 import U32
 from .s32 import S32
 from .f32 import F32
+from .write import write_u8
 
 
 class ArraySet:
@@ -57,3 +59,11 @@ class ArraySet:
         f32 = F32(length)
         self._add_array(identifier, f32)
         return f32
+
+    def write(self) -> Iterator[int]:
+        for identifier, array in self._arrays.items():
+            for byte in array._write(identifier):
+                yield byte
+
+        for byte in write_u8(0xFF):
+            yield byte
