@@ -31,7 +31,7 @@ readme-renderer==28.0
 requests==2.25.1
 requests-toolbelt==0.9.1
 SecretStorage==3.3.0
-setuptools==51.0.0
+setuptools==51.1.0.post20201221
 six==1.15.0
 tqdm==4.54.1
 twine==3.2.0
