@@ -10,7 +10,7 @@ flake8==3.8.3
 idna==2.10
 importlib-metadata==3.3.0
 jeepney==0.6.0
-keyring==21.5.0
+keyring==21.6.0
 mccabe==0.6.1
 more-itertools==8.6.0
 mypy==0.790
