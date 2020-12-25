@@ -33,7 +33,7 @@ requests-toolbelt==0.9.1
 SecretStorage==3.3.0
 setuptools==51.1.0.post20201221
 six==1.15.0
-tqdm==4.54.1
+tqdm==4.55.0
 twine==3.3.0
 typed-ast==1.4.1
 typing-extensions==3.7.4.3
