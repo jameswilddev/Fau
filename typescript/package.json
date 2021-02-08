@@ -41,6 +41,6 @@
     "!**/unit.d.ts"
   ],
   "dependencies": {
-    "jsonschema": "1.2.6"
+    "jsonschema": "1.4.0"
   }
 }
