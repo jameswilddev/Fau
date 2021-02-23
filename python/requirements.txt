@@ -27,7 +27,7 @@ Pygments==2.8.0
 pyparsing==2.4.7
 pytest==6.2.2
 pytest-cov==2.11.1
-readme-renderer==28.0
+readme-renderer==29.0
 requests==2.25.1
 requests-toolbelt==0.9.1
 SecretStorage==3.3.1
